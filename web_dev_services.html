@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web & App Development - Fundbridge Consultation Ltd</title>
+    <style>
+        body { font-family: 'Lato', sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        h1, h2, h3, h4, h5, h6, .font-poppins { font-family: 'Poppins', sans-serif; }
+        .hero-bg {
+            background-color: #0B2D48;
+            background-image: radial-gradient(circle at top right, rgba(29, 185, 84, 0.1), transparent 30%),
+                              radial-gradient(circle at bottom left, rgba(255, 215, 0, 0.08), transparent 40%);
+        }
+        .cta-button { transition: all 0.3s ease; }
+        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+             <a href="./index.html" class="flex items-center space-x-3">
+                <svg class="w-12 h-12" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="100" height="100" rx="20" fill="#0B2D48"/>
+                    <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" font-family="Poppins, sans-serif" font-size="50" font-weight="bold" fill="white">
+                        FC
+                    </text>
+                </svg>
+                <span class="text-xl font-bold text-[#0B2D48] font-poppins">Fundbridge Consultation</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="./index.html" class="text-gray-600 hover:text-[#1DB954]">Home</a>
+                <a href="./services.html" class="text-gray-600 hover:text-[#1DB954]">Funding Services</a>
+                <a href="./web_dev_services.html" class="text-[#1DB954] font-bold">Web & App Dev</a>
+                <a href="https://calendly.com/ogirimaobey/30min" target="_blank" class="bg-[#1DB954] text-white font-bold py-2 px-6 rounded-full cta-button">Book a Call</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-white py-20 md:py-24">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-black leading-tight tracking-tight font-poppins">From Concept to Code.</h1>
+            <p class="text-lg md:text-xl text-gray-300 mt-6 max-w-3xl mx-auto">We build professional websites, web apps, and mobile apps for founders who need a world-class product to match their world-class vision.</p>
+        </div>
+    </section>
+
+    <!-- Website Packages Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <h2 class="text-4xl md:text-5xl font-black text-[#0B2D48] mb-4 font-poppins">Website Development Packages</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">For a professional, world-class online presence.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 max-w-5xl mx-auto items-stretch">
+                <!-- Website Deliver -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg flex flex-col border-2 border-gray-200">
+                    <h3 class="text-3xl font-bold text-[#0B2D48] font-poppins">Website: Develop & Deliver</h3>
+                    <p class="mt-4 text-gray-600 flex-grow">For founders with technical teams who need a professional website built and handed over.</p>
+                    <div class="my-8">
+                        <span class="text-gray-500 text-lg">Starting At</span>
+                        <p class="text-4xl font-black text-[#0B2D48] font-poppins">₦350,000</p>
+                    </div>
+                    <ul class="text-left space-y-4 mb-8">
+                        <li class="flex items-start"><span class="text-green-500 mr-3 mt-1">✔</span>Professional, multi-page website (up to 5 pages).</li>
+                        <li class="flex items-start"><span class="text-green-500 mr-3 mt-1">✔</span>Fully responsive design for all devices.</li>
+                        <li class="flex items-start"><span class="text-green-500 mr-3 mt-1">✔</span>Basic SEO setup and contact form integration.</li>
+                        <li class="flex items-start"><span class="text-green-500 mr-3 mt-1">✔</span>Full handover of all source code.</li>
+                        <li class="flex items-start"><span class="text-green-500 mr-3 mt-1">✔</span>1 week of post-launch support for bug fixes.</li>
+                    </ul>
+                    <a href="https://selar.com/070815i267" target="_blank" class="mt-auto w-full text-center bg-[#0B2D48] text-white font-bold py-3 px-6 rounded-full cta-button">Purchase Now</a>
+                </div>
+
+                <!-- Website Manage -->
+                <div class="bg-white p-8 rounded-2xl shadow-2xl flex flex-col border-4 border-[#1DB954] relative">
+                    <div class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-[#1DB954] text-white font-bold text-sm px-4 py-1 rounded-full">RECOMMENDED</div>
+                    <h3 class="text-3xl font-bold text-[#0B2D48] font-poppins">Website: Develop & Manage</h3>
+                    <p class="mt-4 text-gray-600 flex-grow">A complete, hands-off solution for founders who need a long-term technology partner.</p>
+                    <div class="my-8">
+                        <span class="text-gray-500 text-lg">Starting At</span>
+                        <p class="text-4xl font-black text-[#0B2D48] font-poppins">₦100,000 <span class="text-xl font-bold text-gray-600">/ month</span></p>
+                    </div>
+                    <ul class="text-left space-y-4 mb-8">
+                        <li class="flex items-start"><span class="text-green-500 mr-3 mt-1">✔</span>Includes everything in the **Deliver** package, plus:</li>
+                        <li class="flex items-start font-bold"><span class="text-green-500 mr-3 mt-1">✔</span>Ongoing hosting and domain management.</li>
+                        <li class="flex items-start font-bold"><span class="text-green-500 mr-3 mt-1">✔</span>Regular updates and security maintenance.</li>
+                        <li class="flex items-start font-bold"><span class="text-green-500 mr-3 mt-1">✔</span>Up to 2 hours of content updates per month.</li>
+                        <li class="flex items-start font-bold"><span class="text-green-500 mr-3 mt-1">✔</span>Priority technical support.</li>
+                    </ul>
+                    <a href="https://selar.com/93333132j1" target="_blank" class="mt-auto w-full text-center bg-[#1DB954] text-white font-bold py-3 px-6 rounded-full cta-button">Purchase Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Application Packages Section -->
+    <section class="bg-gray-100 py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <h2 class="text-4xl md:text-5xl font-black text-[#0B2D48] mb-4 font-poppins">Mobile & Web App Packages</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Bring your big idea to life on every platform.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 max-w-5xl mx-auto items-stretch">
+                <!-- App Deliver -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg flex flex-col border-2 border-gray-200">
+                    <h3 class="text-3xl font-bold text-[#0B2D48] font-poppins">Application: Develop & Deliver</h3>
+                    <p class="mt-4 text-gray-600 flex-grow">For startups with a CTO or tech team ready to take over after the initial build.</p>
+                    <div class="my-8">
+                        <span class="text-gray-500 text-lg">Starting At</span>
+                        <p class="text-4xl font-black text-[#0B2D48] font-poppins">₦3,500,000</p>
+                    </div>
+                    <ul class="text-left space-y-4 mb-8">
+                        <li class="flex items-start"><span class="text-green-500 mr-3 mt-1">✔</span>Custom mobile app development (iOS & Android).</li>
+                        <li class="flex items-start"><span class="text-green-500 mr-3 mt-1">✔</span>Accompanying web application.</li>
+                        <li class="flex items-start"><span class="text-green-500 mr-3 mt-1">✔</span>Backend and database setup.</li>
+                        <li class="flex items-start"><span class="text-green-500 mr-3 mt-1">✔</span>Full handover of all source code.</li>
+                        <li class="flex items-start"><span class="text-green-500 mr-3 mt-1">✔</span>2 weeks of post-launch support.</li>
+                    </ul>
+                    <a href="https://calendly.com/ogirimaobey/30min" target="_blank" class="mt-auto w-full text-center bg-[#0B2D48] text-white font-bold py-3 px-6 rounded-full cta-button">Book a Consultation</a>
+                </div>
+
+                <!-- App Manage -->
+                <div class="bg-white p-8 rounded-2xl shadow-2xl flex flex-col border-4 border-[#1DB954] relative">
+                    <div class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-[#1DB954] text-white font-bold text-sm px-4 py-1 rounded-full">RECOMMENDED</div>
+                    <h3 class="text-3xl font-bold text-[#0B2D48] font-poppins">Application: Develop & Manage</h3>
+                    <p class="mt-4 text-gray-600 flex-grow">Your outsourced tech partner, handling everything from development to maintenance.</p>
+                    <div class="my-8">
+                        <span class="text-gray-500 text-lg">Starting At</span>
+                        <p class="text-4xl font-black text-[#0B2D48] font-poppins">₦250,000 <span class="text-xl font-bold text-gray-600">/ month</span></p>
+                    </div>
+                    <ul class="text-left space-y-4 mb-8">
+                        <li class="flex items-start"><span class="text-green-500 mr-3 mt-1">✔</span>Includes everything in the **Deliver** package, plus:</li>
+                        <li class="flex items-start font-bold"><span class="text-green-500 mr-3 mt-1">✔</span>App store submission & management.</li>
+                        <li class="flex items-start font-bold"><span class="text-green-500 mr-3 mt-1">✔</span>Ongoing server and database management.</li>
+                        <li class="flex items-start font-bold"><span class="text-green-500 mr-3 mt-1">✔</span>Regular updates and feature improvements.</li>
+                        <li class="flex items-start font-bold"><span class="text-green-500 mr-3 mt-1">✔</span>Priority technical support & performance monitoring.</li>
+                    </ul>
+                    <a href="https://selar.com/w55jx07037" target="_blank" class="mt-auto w-full text-center bg-[#1DB954] text-white font-bold py-3 px-6 rounded-full cta-button">Purchase Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Combined Package Section -->
+    <section class="py-20 bg-gray-900 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-black mb-4 font-poppins">The All-in-One Venture Build</h2>
+            <p class="text-lg text-gray-300 max-w-3xl mx-auto">For serious founders who need a complete digital ecosystem—a professional website and a powerful application, fully managed.</p>
+            <div class="mt-10 max-w-2xl mx-auto bg-gray-800 p-8 rounded-2xl border border-yellow-400">
+                 <h3 class="text-3xl font-bold text-yellow-400 font-poppins">The Full Stack Package</h3>
+                 <p class="mt-4 text-gray-300">This ultimate package combines the **Develop & Manage** services for BOTH your website and your mobile/web applications into a single, seamless partnership. We become your dedicated technology and strategy partner, ensuring your entire digital presence works together to drive growth.</p>
+                 <a href="https://calendly.com/ogirimaobey/30min" target="_blank" class="mt-8 inline-block bg-yellow-400 text-gray-900 font-bold py-3 px-8 rounded-full cta-button text-lg">Book a Strategic Consultation</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-black text-white py-10">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Fundbridge Consultation Ltd. All Rights Reserved.</p>
+            <p class="text-gray-400 mt-2">Based in Lagos, Serving Africa</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
