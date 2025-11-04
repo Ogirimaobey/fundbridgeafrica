@@ -7,6 +7,30 @@
     <style>
         body { font-family: 'Lato', sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
         h1, h2, h3, h4, h5, h6, .font-poppins { font-family: 'Poppins', sans-serif; }
+        
+        @keyframes gradient-flow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .hero-bg-animated {
+            background: linear-gradient(-45deg, #0B2D48, #11426a, #0B2D48, #1DB954);
+            background-size: 400% 400%;
+            animation: gradient-flow 15s ease infinite;
+        }
+
+        @keyframes fade-in-up {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+            animation: fade-in-up 0.8s ease-out forwards;
+            opacity: 0; /* Start hidden */
+        }
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+
         .cta-button { transition: all 0.3s ease; }
         .cta-button:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
     </style>
@@ -28,6 +52,7 @@
                  </svg>
                  <span class="text-xl font-bold text-[#0B2D48] font-poppins">F-Bridge Africa</span>
              </a>
+             
              <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
                 <a href="./index.html" class="text-gray-600 hover:text-[#1DB954]">Home</a>
                 <a href="./tech.html" class="text-gray-600 hover:text-[#1DB954]">Venture & Tech</a>
@@ -36,16 +61,40 @@
                 <a href="./capital.html" class="text-[#1DB954] font-bold">Capital</a>
                 <a href="https://calendly.com/ogirimaobey/30min" target="_blank" class="bg-[#1DB954] text-white font-bold py-2 px-6 rounded-full cta-button">Book a Call</a>
             </nav>
+
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <nav class="flex flex-col p-4 space-y-2">
+                <a href="./index.html" class="text-gray-600 hover:bg-gray-50 p-2 rounded-md">Home</a>
+                <a href="./tech.html" class="text-gray-600 hover:bg-gray-50 p-2 rounded-md">Venture & Tech</a>
+                <a href="./media.html" class="text-gray-600 hover:bg-gray-50 p-2 rounded-md">Media & Marketing</a>
+                <a href="./operations.html" class="text-gray-600 hover:bg-gray-50 p-2 rounded-md">Operations</a>
+                <a href="./capital.html" class="text-[#1DB954] font-bold p-2 rounded-md">Capital</a>
+                <a href="https://calendly.com/ogirimaobey/30min" target="_blank" class="bg-[#1DB954] text-white font-bold py-2 px-6 rounded-full cta-button text-center">Book a Call</a>
+            </nav>
         </div>
     </header>
 
+    <section class="hero-bg-animated text-white py-20 md:py-24">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-black leading-tight tracking-tight font-poppins animate-fade-in-up">Get Your Venture Investor-Ready.</h1>
+            <p class="text-lg md:text-xl text-gray-300 mt-6 max-w-3xl mx-auto animate-fade-in-up delay-1">Our Tech, Media, and Ops services build your business. Our Capital services build your bridge to investors.</p>
+        </div>
+    </section>
+
     <section id="services" class="py-20">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl md:text-5xl font-black text-[#0B2D48] mb-4 font-poppins">Capital & Investment Services</h2>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Our 4-pillar model is designed to make your business fundable. Our Tech, Media, and Ops services build your business. These Capital packages build your bridge to investors.</p>
+            <h2 class="text-4xl md:text-5xl font-black text-[#0B2D48] mb-4 font-poppins animate-fade-in-up">Capital & Strategy Packages</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto animate-fade-in-up delay-1">From a simple strategy call to a full investor-readiness package, we position you to win.</p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16 items-stretch">
-                <div class="bg-white p-8 rounded-2xl shadow-lg flex flex-col">
+                <div class="bg-white p-8 rounded-2xl shadow-lg flex flex-col animate-fade-in-up delay-1">
                     <h3 class="text-2xl font-bold text-[#0B2D48] font-poppins">Starter Access</h3>
                     <p class="mt-4 text-gray-600 flex-grow">The essential DIY toolkit for aspiring founders.</p>
                     <div class="my-8">
@@ -61,7 +110,7 @@
                     <a href="https://calendly.com/ogirimaobey/30min" target="_blank" class="mt-auto w-full text-center bg-gray-200 text-[#0B2D48] font-bold py-3 px-6 rounded-full cta-button">Book a Consultation</a>
                 </div>
 
-                <div class="bg-white p-8 rounded-2xl shadow-2xl flex flex-col border-4 border-[#1DB954] relative">
+                <div class="bg-white p-8 rounded-2xl shadow-2xl flex flex-col border-4 border-[#1DB954] relative animate-fade-in-up delay-2">
                     <div class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-[#1DB954] text-white font-bold text-sm px-4 py-1 rounded-full">RECOMMENDED</div>
                     <h3 class="text-2xl font-bold text-[#0B2D48] font-poppins">Strategy & QuickMatch</h3>
                     <p class="mt-4 text-gray-600 flex-grow">A custom report plus direct strategic advice.</p>
@@ -78,7 +127,7 @@
                     <a href="https://calendly.com/ogirimaobey/30min" target="_blank" class="mt-auto w-full text-center bg-[#1DB954] text-white font-bold py-3 px-6 rounded-full cta-button">Book a Consultation</a>
                 </div>
 
-                <div class="bg-white p-8 rounded-2xl shadow-lg flex flex-col">
+                <div class="bg-white p-8 rounded-2xl shadow-lg flex flex-col animate-fade-in-up delay-3">
                     <h3 class="text-2xl font-bold text-[#0B2D48] font-poppins">Investor Readiness</h3>
                     <p class="mt-4 text-gray-600 flex-grow">We partner with you to get you investor-ready.</p>
                     <div class="my-8">
@@ -123,18 +172,29 @@
                          <li class="flex items-start font-bold"><span class="text-green-500 mr-3 mt-1">✔</span>Full management of your tech or ops teams.</li>
                          <li class="flex items-start font-bold"><span class="text-green-500 mr-3 mt-1">✔</span>High-level strategy and system-building.</li>
                      </ul>
-                    <a href="https://calendly.com/ogirimaobey/30min" target="_blank" class="w-full text-center bg-[#0B2D48] text-white font-bold py-3 px-6 rounded-full cta-button inline-block">Book a Consultation</a>
+                    <a href="./operations.html" class="w-full text-center bg-[#0B2D48] text-white font-bold py-3 px-6 rounded-full cta-button inline-block">Learn About Operations</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-[#0B2D48] text-white py-10">
+    <footer class="bg-black text-white py-10">
         <div class="container mx-auto px-6 text-center">
             <p>&copy; 2025 F-Bridge Africa. All Rights Reserved.</p>
             <p class="text-gray-400 mt-2">Based in Lagos, Serving Africa</p>
         </div>
     </footer>
+
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            var menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        });
+    </script>
 
 </body>
 </html>
