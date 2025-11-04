@@ -7,11 +7,35 @@
     <style>
         body { font-family: 'Lato', sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
         h1, h2, h3, h4, h5, h6, .font-poppins { font-family: 'Poppins', sans-serif; }
-        .hero-bg {
-            background-color: #0B2D48;
-            background-image: radial-gradient(circle at top right, rgba(29, 185, 84, 0.1), transparent 30%),
-                              radial-gradient(circle at bottom left, rgba(255, 215, 0, 0.08), transparent 40%);
+        
+        /* NEW: Animated Gradient for "Tech Feel" */
+        @keyframes gradient-flow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
+        .hero-bg-animated {
+            background: linear-gradient(-45deg, #0B2D48, #11426a, #0B2D48, #1DB954);
+            background-size: 400% 400%;
+            animation: gradient-flow 15s ease infinite;
+        }
+
+        /* NEW: Fade-in-on-load Animation */
+        @keyframes fade-in-up {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+            animation: fade-in-up 0.8s ease-out forwards;
+            opacity: 0; /* Start hidden */
+        }
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+        .delay-5 { animation-delay: 1.0s; }
+
+
         .cta-button { transition: all 0.3s ease; }
         .cta-button:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
     </style>
@@ -24,16 +48,17 @@
 
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="./index.html" class="flex items-center space-x-3">
-                <svg class="w-12 h-12" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="100" height="100" rx="20" fill="#0B2D48"/>
-                    <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" font-family="Poppins, sans-serif" font-size="50" font-weight="bold" fill="white">
-                        FB
-                    </text>
-                </svg>
-                <span class="text-xl font-bold text-[#0B2D48] font-poppins">F-Bridge Africa</span>
-            </a>
-            <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
+             <a href="./index.html" class="flex items-center space-x-3">
+                 <svg class="w-12 h-12" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                     <rect width="100" height="100" rx="20" fill="#0B2D48"/>
+                     <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" font-family="Poppins, sans-serif" font-size="50" font-weight="bold" fill="white">
+                         FB
+                     </text>
+                 </svg>
+                 <span class="text-xl font-bold text-[#0B2D48] font-poppins">F-Bridge Africa</span>
+             </a>
+             
+             <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
                 <a href="./index.html" class="text-[#1DB954] font-bold">Home</a>
                 <a href="./tech.html" class="text-gray-600 hover:text-[#1DB954]">Venture & Tech</a>
                 <a href="./media.html" class="text-gray-600 hover:text-[#1DB954]">Media & Marketing</a>
@@ -41,14 +66,31 @@
                 <a href="./capital.html" class="text-gray-600 hover:text-[#1DB954]">Capital</a>
                 <a href="https://calendly.com/ogirimaobey/30min" target="_blank" class="bg-[#1DB954] text-white font-bold py-2 px-6 rounded-full cta-button">Book a Call</a>
             </nav>
+
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <nav class="flex flex-col p-4 space-y-2">
+                <a href="./index.html" class="text-[#1DB954] font-bold p-2 rounded-md">Home</a>
+                <a href="./tech.html" class="text-gray-600 hover:bg-gray-50 p-2 rounded-md">Venture & Tech</a>
+                <a href="./media.html" class="text-gray-600 hover:bg-gray-50 p-2 rounded-md">Media & Marketing</a>
+                <a href="./operations.html" class="text-gray-600 hover:bg-gray-50 p-2 rounded-md">Operations</a>
+                <a href="./capital.html" class="text-gray-600 hover:bg-gray-50 p-2 rounded-md">Capital</a>
+                <a href="https://calendly.com/ogirimaobey/30min" target="_blank" class="bg-[#1DB954] text-white font-bold py-2 px-6 rounded-full cta-button text-center">Book a Call</a>
+            </nav>
         </div>
     </header>
 
-    <section class="hero-bg text-white py-24 md:py-32">
+    <section class="hero-bg-animated text-white py-24 md:py-32">
         <div class="container mx-auto px-6 text-center">
-            <h1 class="text-5xl md:text-7xl font-black leading-tight tracking-tight font-poppins">Build Your Product. Secure Your Funding.</h1>
-            <p class="text-lg md:text-xl text-gray-300 mt-6 max-w-3xl mx-auto">We are a holistic venture-building firm that bridges the gap for African businesses. We provide the **Technology, Marketing, Operations, and Capital** strategies you need to scale from idea to empire.</p>
-            <a href="#services" class="mt-10 inline-block bg-[#FFD700] text-[#0B2D48] font-bold py-4 px-10 rounded-full cta-button text-lg">Explore Our Services</a>
+            <h1 class="text-5xl md:text-7xl font-black leading-tight tracking-tight font-poppins animate-fade-in-up">Build Your Product. Secure Your Funding.</h1>
+            <p class="text-lg md:text-xl text-gray-300 mt-6 max-w-3xl mx-auto animate-fade-in-up delay-1">We are a holistic venture-building firm that bridges the gap for African businesses. We provide the **Technology, Marketing, Operations, and Capital** strategies you need to scale from idea to empire.</p>
+            <a href="#services" class="mt-10 inline-block bg-[#FFD700] text-[#0B2D48] font-bold py-4 px-10 rounded-full cta-button text-lg animate-fade-in-up delay-2">Explore Our Services</a>
         </div>
     </section>
 
@@ -70,30 +112,30 @@
     <section id="services" class="py-20 bg-gray-100">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
-                <h2 class="text-4xl md:text-5xl font-black text-[#0B2D48] font-poppins">We Bridge the Gaps for Businesses</h2>
-                <p class="text-lg text-gray-700 max-w-3xl mx-auto mt-4">We are a full-service consultancy built on four powerful pillars.</p>
+                <h2 class="text-4xl md:text-5xl font-black text-[#0B2D48] font-poppins animate-fade-in-up">We Bridge the Gaps for Businesses</h2>
+                <p class="text-lg text-gray-700 max-w-3xl mx-auto mt-4 animate-fade-in-up delay-1">We are a full-service consultancy built on four powerful pillars.</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-green-500">
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-green-500 animate-fade-in-up delay-2">
                     <h3 class="text-2xl font-bold text-[#0B2D48] font-poppins">Venture & Tech</h3>
                     <p class="mt-4 text-gray-700">We are a full-stack development agency. We build your MVP, website, mobile app, and AI/ML models from the ground up.</p>
                     <a href="./tech.html" class="mt-6 inline-block text-green-600 font-bold hover:underline">Our Tech Services &rarr;</a>
                 </div>
                 
-                <div class="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-yellow-400">
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-yellow-400 animate-fade-in-up delay-3">
                     <h3 class="text-2xl font-bold text-[#0B2D48] font-poppins">Media & Marketing</h3>
                     <p class="mt-4 text-gray-700">We are a media house. We build your brand, create your content, manage your socials, and run your sales funnels.</p>
                     <a href="./media.html" class="mt-6 inline-block text-green-600 font-bold hover:underline">Our Media Services &rarr;</a>
                 </div>
                 
-                <div class="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-blue-500">
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-blue-500 animate-fade-in-up delay-4">
                     <h3 class="text-2xl font-bold text-[#0B2D48] font-poppins">Operations</h3>
                     <p class="mt-4 text-gray-700">We are your fractional executive. We provide "CTO" or "Head of Ops" services to manage your teams and build your systems.</p>
                     <a href="./operations.html" class="mt-6 inline-block text-green-600 font-bold hover:underline">Our Ops Services &rarr;</a>
                 </div>
                 
-                <div class="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-purple-500">
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-purple-500 animate-fade-in-up delay-5">
                     <h3 class="text-2xl font-bold text-[#0B2D48] font-poppins">Capital</h3>
                     <p class="mt-4 text-gray-700">We are your strategic partner. Once your business is built, managed, and marketed, we bridge the gap to global capital.</p>
                     <a href="./capital.html" class="mt-6 inline-block text-green-600 font-bold hover:underline">Our Capital Services &rarr;</a>
@@ -112,12 +154,12 @@
             </div>
         </div>
     </section>
-
-     <section class="bg-white py-20">
+     
+    <section class="bg-white py-20">
         <div class="container mx-auto px-6 text-center max-w-6xl">
             <h2 class="text-4xl md:text-5xl font-black text-[#0B2D48] mb-12 font-poppins">What Our Community is Saying</h2>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div class="bg-gray-50 p-8 md:p-12 rounded-2xl shadow-lg h-full flex flex-col">
+                <div class="bg-gray-50 p-8 md:p-12 rounded-2xl shadow-lg h-full flex flex-col animate-fade-in-up delay-1">
                     <blockquote class="text-xl md:text-2xl italic text-gray-700 leading-relaxed flex-grow">
                         "Anytime I’m talking to someone, I always mention you... You are among those who are even more hungry for my vision and my growth than I am, constantly pushing me to open up to new opportunities. I don’t take this for granted... I really cannot repay you for all that you’ve done."
                     </blockquote>
@@ -126,7 +168,7 @@
                         <span class="text-gray-600 block">Founder, SOJ Handmade Footwear</span>
                     </cite>
                 </div>
-                <div class="bg-gray-50 p-8 md:p-12 rounded-2xl shadow-lg h-full flex flex-col">
+                <div class="bg-gray-50 p-8 md:p-12 rounded-2xl shadow-lg h-full flex flex-col animate-fade-in-up delay-2">
                      <blockquote class="text-xl md:text-2xl italic text-gray-700 leading-relaxed flex-grow">
                         "When I say learn skills... it is very important. Now see what a Registered Nurse did... If you need a website or an app on Google Playstore or Apple Store, please get in touch with this Registered Nurse."
                     </blockquote>
@@ -182,6 +224,17 @@
             <p class="text-gray-400 mt-2">Based in Lagos, Serving Africa</p>
         </div>
     </footer>
+
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            var menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        });
+    </script>
 
 </body>
 </html>
