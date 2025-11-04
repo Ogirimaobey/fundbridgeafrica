@@ -7,8 +7,21 @@
     <style>
         body { font-family: 'Lato', sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
         h1, h2, h3, h4, h5, h6, .font-poppins { font-family: 'Poppins', sans-serif; }
+        
+        @keyframes fade-in-up {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+            animation: fade-in-up 0.8s ease-out forwards;
+            opacity: 0; /* Start hidden */
+        }
+        .delay-1 { animation-delay: 0.2s; }
+        
         .card-hover { transition: all 0.3s ease; }
         .card-hover:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .cta-button { transition: all 0.3s ease; }
+        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,25 +31,50 @@
 <body class="bg-gray-100">
 
     <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-5 flex items-center space-x-4">
-            <svg class="w-12 h-12" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <rect width="100" height="100" rx="20" fill="#0B2D48"/>
-                <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" font-family="Poppins, sans-serif" font-size="50" font-weight="bold" fill="white">
-                    FB
-                </text>
-            </svg>
-            <div>
-                <h1 class="text-2xl font-bold text-[#0B2D48] font-poppins">F-Bridge Africa</h1>
-                <p class="text-gray-500">Our Recent Work</p>
-            </div>
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+             <a href="./index.html" class="flex items-center space-x-3">
+                 <svg class="w-12 h-12" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                     <rect width="100" height="100" rx="20" fill="#0B2D48"/>
+                     <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" font-family="Poppins, sans-serif" font-size="50" font-weight="bold" fill="white">
+                         FB
+                     </text>
+                 </svg>
+                 <span class="text-xl font-bold text-[#0B2D48] font-poppins">F-Bridge Africa</span>
+             </a>
+             
+             <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
+                <a href="./index.html" class="text-gray-600 hover:text-[#1DB954]">Home</a>
+                <a href="./tech.html" class="text-gray-600 hover:text-[#1DB954]">Venture & Tech</a>
+                <a href="./media.html" class="text-gray-600 hover:text-[#1DB954]">Media & Marketing</a>
+                <a href="./operations.html" class="text-gray-600 hover:text-[#1DB954]">Operations</a>
+                <a href="./capital.html" class="text-gray-600 hover:text-[#1DB954]">Capital</a>
+                <a href="https://calendly.com/ogirimaobey/30min" target="_blank" class="bg-[#1DB954] text-white font-bold py-2 px-6 rounded-full cta-button">Book a Call</a>
+            </nav>
+
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <nav class="flex flex-col p-4 space-y-2">
+                <a href="./index.html" class="text-gray-600 hover:bg-gray-50 p-2 rounded-md">Home</a>
+                <a href="./tech.html" class="text-gray-600 hover:bg-gray-50 p-2 rounded-md">Venture & Tech</a>
+                <a href="./media.html" class="text-gray-600 hover:bg-gray-50 p-2 rounded-md">Media & Marketing</a>
+                <a href="./operations.html" class="text-gray-600 hover:bg-gray-50 p-2 rounded-md">Operations</a>
+                <a href="./capital.html" class="text-gray-600 hover:bg-gray-50 p-2 rounded-md">Capital</a>
+                <a href="https://calendly.com/ogirimaobey/30min" target="_blank" class="bg-[#1DB954] text-white font-bold py-2 px-6 rounded-full cta-button text-center">Book a Call</a>
+            </nav>
         </div>
     </header>
 
     <main class="container mx-auto px-6 py-16">
 
         <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-black text-[#0B2D48] font-poppins">Our Technical Portfolio</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto mt-4">We build the technical foundation for businesses. Here is a selection of our 30+ recent projects, proving our expertise in building world-class web applications for healthcare, e-commerce, education, and more.</p>
+            <h2 class="text-4xl md:text-5xl font-black text-[#0B2D48] font-poppins animate-fade-in-up">Our Technical Portfolio</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto mt-4 animate-fade-in-up delay-1">We build the technical foundation for businesses. Here is a selection of our 30+ recent projects, proving our expertise in building world-class web applications for healthcare, e-commerce, education, and more.</p>
         </div>
 
         <div class="mb-16">
@@ -48,19 +86,6 @@
                 <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover"><img src="https://placehold.co/600x400/1DB954/FFFFFF?text=Cottage+Hospital" alt="Cottage Hospital Website"><div class="p-6"><h4 class="text-xl font-bold text-[#0B2D48]">Cottage Hospital</h4><p class="text-gray-600 mt-2">A clean and accessible website for a community-focused hospital.</p><a href="https://ogirimaobey.github.io/Cottage-Hospital./#" target="_blank" class="mt-4 inline-block text-green-600 font-bold hover:underline">View Live Site &rarr;</a></div></div>
                 <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover"><img src="https://placehold.co/600x400/1DB954/FFFFFF?text=Sophie+Medical" alt="Sophie Medical Website"><div class="p-6"><h4 class="text-xl font-bold text-[#0B2D48]">Sophie Medical</h4><p class="text-gray-600 mt-2">A professional landing page for a specialized medical service.</p><a href="https://ogirimaobey.github.io/Sophie-Medical/" target="_blank" class="mt-4 inline-block text-green-600 font-bold hover:underline">View Live Site &rarr;</a></div></div>
                 <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover"><img src="https://placehold.co/600x400/1DB954/FFFFFF?text=Anchor+Hospital" alt="Anchor Hospital Website"><div class="p-6"><h4 class="text-xl font-bold text-[#0B2D48]">Anchor Hospital</h4><p class="text-gray-600 mt-2">A trustworthy and professional online presence for a major hospital.</p><a href="https://ogirimaobey.github.io/anchor-hospital/" target="_blank" class="mt-4 inline-block text-green-600 font-bold hover:underline">View Live Site &rarr;</a></div></div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover"><img src="https://placehold.co/600x400/1DB954/FFFFFF?text=Lush+Green" alt="Lush Green Medical Center Website"><div class="p-6"><h4 class="text-xl font-bold text-[#0B2D48]">Lush Green Medical</h4><p class="text-gray-600 mt-2">A welcoming site for a medical center focused on wellness.</p><a href="https://ogirimaobey.github.io/lush-green-medical-center/" target="_blank" class="mt-4 inline-block text-green-600 font-bold hover:underline">View Live Site &rarr;</a></div></div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover"><img src="https://placehold.co/600x400/1DB954/FFFFFF?text=Rehoboth" alt="Rehoboth Specialist Hospital Website"><div class="p-6"><h4 class="text-xl font-bold text-[#0B2D48]">Rehoboth Specialist Hospital</h4><p class="text-gray-600 mt-2">Digital presence for a leading specialist medical institution.</p><a href="https://ogirimaobey.github.io/Rehoboth-Specialist-Hospital-/" target="_blank" class="mt-4 inline-block text-green-600 font-bold hover:underline">View Live Site &rarr;</a></div></div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover"><img src="https://placehold.co/600x400/1DB954/FFFFFF?text=Garden+City" alt="Garden City Clinic Website"><div class="p-6"><h4 class="text-xl font-bold text-[#0B2D48]">Garden City Clinic</h4><p class="text-gray-600 mt-2">A clean and modern website for a city-based clinic.</p><a href="https://ogirimaobey.github.io/Garden-City-Clinic/" target="_blank" class="mt-4 inline-block text-green-600 font-bold hover:underline">View Live Site &rarr;</a></div></div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover"><img src="https://placehold.co/600x400/1DB954/FFFFFF?text=Alphonso" alt="Alphonso Hospital Website"><div class="p-6"><h4 class="text-xl font-bold text-[#0B2D48]">Alphonso Hospital</h4><p class="text-gray-600 mt-2">A professional site for a hospital focused on patient care.</p><a href="https://ogirimaobey.github.io/Alphonso-Hospital/" target="_blank" class="mt-4 inline-block text-green-600 font-bold hover:underline">View Live Site &rarr;</a></div></div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover"><img src="https://placehold.co/600x400/1DB954/FFFFFF?text=St.+Rebecca" alt="St Rebecca Hospital Website"><div class="p-6"><h4 class="text-xl font-bold text-[#0B2D48]">St. Rebecca Hospital</h4><p class="text-gray-600 mt-2">A professional website for a community-trusted hospital.</p><a href="https://ogirimaobey.github.io/St-Rebecca-Hospital.-/" target="_blank" class="mt-4 inline-block text-green-600 font-bold hover:underline">View Live Site &rarr;</a></div></div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover"><img src="https://placehold.co/600x400/1DB954/FFFFFF?text=Posh+Hospital" alt="Posh Hospital Website"><div class="p-6"><h4 class="text-xl font-bold text-[#0B2D48]">Posh Hospital</h4><p class="text-gray-600 mt-2">A clean and professional online presence for a modern healthcare facility.</p><a href="https://ogirimaobey.github.io/posh-hospital/" target="_blank" class="mt-4 inline-block text-green-600 font-bold hover:underline">View Live Site &rarr;</a></div></div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover"><img src="https://placehold.co/600x400/1DB954/FFFFFF?text=Phronesis+Care" alt="Phronesis Care Hub Website"><div class="p-6"><h4 class="text-xl font-bold text-[#0B2D48]">Phronesis Care Hub</h4><p class="text-gray-600 mt-2">A professional and trustworthy site for a healthcare and wellness organization.</p><a href="https://ogirimaobey.github.io/phronesis-care-hub/" target="_blank" class="mt-4 inline-block text-green-600 font-bold hover:underline">View Live Site &rarr;</a></div></div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover"><img src="https://placehold.co/600x400/1DB954/FFFFFF?text=Primecare" alt="Primecare Hospital Website"><div class="p-6"><h4 class="text-xl font-bold text-[#0B2D48]">Primecare Hospital</h4><p class="text-gray-600 mt-2">A welcoming digital front door for a primary care hospital.</p><a href="https://ogirimaobey.github.io/primecare-hospital/" target="_blank" class="mt-4 inline-block text-green-600 font-bold hover:underline">View Live Site &rarr;</a></div></div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover"><img src="https://placehold.co/600x400/1DB954/FFFFFF?text=Full-Life+Medical" alt="Full-Life Medical Care Website"><div class="p-6"><h4 class="text-xl font-bold text-[#0B2D48]">Full-Life Medical Care</h4><p class="text-gray-600 mt-2">A comprehensive site for a multi-service medical care center.</p><a href="https://ogirimaobey.github.io/full-life-medical-care/" target="_blank" class="mt-4 inline-block text-green-600 font-bold hover:underline">View Live Site &rarr;</a></div></div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover"><img src="https://placehold.co/600x400/1DB954/FFFFFF?text=St.+Leo's" alt="St. Leo's Hospital Website"><div class="p-6"><h4 class="text-xl font-bold text-[#0B2D48]">St. Leo's Hospital</h4><p class="text-gray-600 mt-2">Website for a specialized care and community health provider.</p><a href="https://ogirimaobey.github.io/st.-leo-s-hospital/" target="_blank" class="mt-4 inline-block text-green-600 font-bold hover:underline">View Live Site &rarr;</a></div></div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover"><img src="https://placehold.co/600x400/1DB954/FFFFFF?text=Kenechukwu" alt="Kenechukwu Hospital Website"><div class="p-6"><h4 class="text-xl font-bold text-[#0B2D48]">Kenechukwu Hospital</h4><p class="text-gray-600 mt-2">Digital presence for a trusted local hospital and medical center.</p><a href="https://ogirimaobey.github.io/kenechukwu-hospital/" target="_blank" class="mt-4 inline-block text-green-600 font-bold hover:underline">View Live Site &rarr;</a></div></div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover"><img src="https://placehold.co/600x400/1DB954/FFFFFF?text=Livingston" alt="Livingston Hospital Website"><div class="p-6"><h4 class="text-xl font-bold text-[#0B2D48]">Livingston Hospital</h4><p class="text-gray-600 mt-2">A professional site for a hospital focused on patient care.</p><a href="httpsa://ogirimaobey.github.io/livingston-hospital/" target="_blank" class="mt-4 inline-block text-green-600 font-bold hover:underline">View Live Site &rarr;</a></div></div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover"><img src="https://placehold.co/600x400/1DB954/FFFFFF?text=Aickon+Specialist" alt="Aickon Specialist Hospital Website"><div class="p-6"><h4 class="text-xl font-bold text-[#0B2D48]">Aickon Specialist Hospital</h4><p class="text-gray-600 mt-2">A website for a specialized medical institution.</p><a href="https://ogirimaobey.github.io/aickon-specialist-hospital/" target="_blank" class="mt-4 inline-block text-green-600 font-bold hover:underline">View Live Site &rarr;</a></div></div>
             </div>
         </div>
 
@@ -68,11 +93,8 @@
             <h3 class="text-3xl font-bold text-[#0B2D48] font-poppins border-b-2 border-yellow-500 pb-2 mb-8">E-commerce, Corporate & FinTech (6 Projects)</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover"><img src="https://placehold.co/600x400/FFD700/0B2D48?text=Mr+PeaksFX" alt="Mr PeaksFX Academy Website"><div class="p-6"><h4 class="text-xl font-bold text-[#0B2D48]">Mr PeaksFX Academy</h4><p class="text-gray-600 mt-2">A professional learning platform for a forex trading academy.</p><a href="https://ogirimaobey.github.io/Mr-PeaksFX/" target="_blank" class="mt-4 inline-block text-green-600 font-bold hover:underline">View Live Site &rarr;</a></div></div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover"><img src="https://placehold.co/600x400/FFD700/0B2D48?text=Bosco+Sharp" alt="Bosco Sharp Website"><div class="p-6"><h4 class="text-xl font-bold text-[#0B2D48]">Bosco Sharp Universal</h4><p class="text-gray-600 mt-2">A clean corporate website for a multi-faceted business concept.</p><a href="https://ogirimaobey.github.io/BOSCO-SHARP/" target="_blank" class="mt-4 inline-block text-green-600 font-bold hover:underline">View Live Site &rarr;</a></div></div>
                 <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover"><img src="https://placehold.co/600x400/FFD700/0B2D48?text=SOJ+Footwears" alt="SOJ Footwears Website"><div class="p-6"><h4 class="text-xl font-bold text-[#0B2D48]">SOJ Handmade Footwears</h4><p class="text-gray-600 mt-2">An elegant e-commerce presence for a bespoke footwear brand.</p><a href="https://ogirimaobey.github.io/SOJfootwears/" target="_blank" class="mt-4 inline-block text-green-600 font-bold hover:underline">View Live Site &rarr;</a></div></div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover"><img src="https://placehold.co/600x400/FFD700/0B2D48?text=Jomapeg" alt="Jomapeg Website"><div class="p-6"><h4 class="text-xl font-bold text-[#0B2D48]">Jomapeg</h4><p class="text-gray-600 mt-2">A stylish storefront for a contemporary retail brand.</p><a href="https://ogirimaobey.github.io/Jomapeg/" target="_blank" class="mt-4 inline-block text-green-600 font-bold hover:underline">View Live Site &rarr;</a></div></div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover"><img src="https://placehold.co/600x400/FFD700/0B2D48?text=God's+Grace+Hairline" alt="God's Grace Hairline Website"><div class="p-6"><h4 class="text-xl font-bold text-[#0B2D48]">God's Grace Hairline</h4><p class="text-gray-600 mt-2">A beautiful and engaging site for a beauty and hair products business.</p><a href="https://ogirimaobey.github.io/God-s-grace-hairline/" target="_blank" class="mt-4 inline-block text-green-600 font-bold hover:underline">View Live Site &rarr;</a></div></div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover"><img src="https://placehold.co/600x400/FFD700/0B2D48?text=Skate+Winery" alt="Skate Winery Website"><div class="p-6"><h4 class="text-xl font-bold text-[#0B2D48]">Skate Winery</h4><p class="text-gray-600 mt-2">A sophisticated design for a winery and beverage company.</p><a href="https://ogirimaobey.github.io/skate-winery/" target="_blank" class="mt-4 inline-block text-green-600 font-bold hover:underline">View Live Site &rarr;</a></div></div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover"><img src="https://placehold.co/600x400/FFD700/0B2D48?text=Bosco+Sharp" alt="Bosco Sharp Website"><div class="p-6"><h4 class="text-xl font-bold text-[#0B2D48]">Bosco Sharp Universal</h4><p class="text-gray-600 mt-2">A clean corporate website for a multi-faceted business concept.</p><a href="https://ogirimaobey.github.io/BOSCO-SHARP/" target="_blank" class="mt-4 inline-block text-green-600 font-bold hover:underline">View Live Site &rarr;</a></div></div>
             </div>
         </div>
 
@@ -80,43 +102,29 @@
             <h3 class="text-3xl font-bold text-[#0B2D48] font-poppins border-b-2 border-blue-500 pb-2 mb-8">Education, Ministry & Community (5 Projects)</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover"><img src="https://placehold.co/600x400/3B82F6/FFFFFF?text=Men+Aflame" alt="Men Aflame Network Website"><div class="p-6"><h4 class="text-xl font-bold text-[#0B2D48]">Men Aflame Network</h4><p class="text-gray-600 mt-2">A dynamic website for a global men's ministry and network.</p><a href="https://ogirimaobey.github.io/men-aflame-network/" target="_blank" class="mt-4 inline-block text-green-600 font-bold hover:underline">View Live Site &rarr;</a></div></div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover"><img src="https://placehold.co/600x400/3B82F6/FFFFFF?text=Pythagoras" alt="Pythagoras Advance Studies Website"><div class="p-6"><h4 class="text-xl font-bold text-[#0B2D48]">Pythagoras Advance Studies</h4><p class="text-gray-600 mt-2">An informative website for an advanced educational institution.</p><a href="https://ogirimaobey.github.io/pythagoras-advance-studies/" target="_blank" class="mt-4 inline-block text-green-600 font-bold hover:underline">View Live Site &rarr;</a></div></div>
                 <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover"><img src="https://placehold.co/600x400/3B82F6/FFFFFF?text=DA-NMJ" alt="DA-NMJ Platform Website"><div class="p-6"><h4 class="text-xl font-bold text-[#0B2D48]">DA-NMJ Platform</h4><p class="text-gray-600 mt-2">A comprehensive platform for Dr. Aloy's community.</p><a href="https://ogirimaobey.github.io/DA-NMJ/#" target="_blank" class="mt-4 inline-block text-green-600 font-bold hover:underline">View Live Site &rarr;</a></div></div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover"><img src="https://placehold.co/600x400/3B82F6/FFFFFF?text=FTF+Ministries" alt="FTF Ministries Website"><div class="p-6"><h4 class="text-xl font-bold text-[#0B2D48]">FTF Ministries</h4><p class="text-gray-600 mt-2">An inspirational and welcoming website for a faith-based ministry.</p><a href="https://ogirimaobey.github.io/FTF-ministries/" target="_blank" class="mt-4 inline-block text-green-600 font-bold hover:underline">View Live Site &rarr;</a></div></div>
                 <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover"><img src="https://placehold.co/600x400/3B82F6/FFFFFF?text=Kingdom-preneur" alt="Kingdom-preneur Challenge Website"><div class="p-6"><h4 class="text-xl font-bold text-[#0B2D48]">Kingdom-preneur Challenge</h4><p class="text-gray-600 mt-2">A landing page for a 30-day founder challenge initiative.</p><a href="https://ogirimaobey.github.io/kingdom-preneur-30days-challenge/" target="_blank" class="mt-4 inline-block text-green-600 font-bold hover:underline">View Live Site &rarr;</a></div></div>
             </div>
         </div>
-
-        <div class="text-center mt-20">
-             <h2 class="text-4xl md:text-5xl font-black text-[#0B2D48] font-poppins">What Our Community Says</h2>
-        </div>
-        <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-             <div class="bg-white p-8 md:p-12 rounded-2xl shadow-lg h-full flex flex-col">
-                 <blockquote class="text-xl italic text-gray-700 leading-relaxed flex-grow">
-                     "You are among those who are even more hungry for my vision and my growth than I am, constantly pushing me to open up to new opportunities..."
-                 </blockquote>
-                 <cite class="block mt-8 not-italic">
-                     <span class="font-bold text-lg text-[#0B2D48]">Salome Ometere Jose</span>
-                     <span class="text-gray-600 block">Founder, SOJ Handmade Footwear</span>
-                 </cite>
-            </div>
-            <div class="bg-white p-8 md:p-12 rounded-2xl shadow-lg h-full flex flex-col">
-                 <blockquote class="text-xl italic text-gray-700 leading-relaxed flex-grow">
-                     "When I say learn skills... it is very important. Now see what a Registered Nurse did... If you need a website or an app... get in touch."
-                 </blockquote>
-                 <cite class="block mt-8 not-italic">
-                     <span class="font-bold text-lg text-[#0B2D48]">Dr. Aloy</span>
-                     <span class="text-gray-600 block">Convener & Founder of DA-NMJ</span>
-                 </cite>
-            </div>
-        </div>
+        
     </main>
 
-    <footer class="bg-[#0B2D48] text-white py-10 mt-12">
-        <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2.0.2.5 F-Bridge Africa. All Rights Reserved.</p>
+    <footer class="bg-black text-white py-10 mt-12">
+        <div classs="container mx-auto px-6 text-center">
+            <p>&copy; 2025 F-Bridge Africa. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            var menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        });
+    </script>
 
 </body>
 </html>
