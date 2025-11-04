@@ -7,11 +7,30 @@
     <style>
         body { font-family: 'Lato', sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
         h1, h2, h3, h4, h5, h6, .font-poppins { font-family: 'Poppins', sans-serif; }
-        .hero-bg {
-            background-color: #0B2D48;
-            background-image: radial-gradient(circle at top right, rgba(29, 185, 84, 0.1), transparent 30%),
-                              radial-gradient(circle at bottom left, rgba(255, 215, 0, 0.08), transparent 40%);
+        
+        @keyframes gradient-flow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
+        .hero-bg-animated {
+            background: linear-gradient(-45deg, #0B2D48, #11426a, #0B2D48, #1DB954);
+            background-size: 400% 400%;
+            animation: gradient-flow 15s ease infinite;
+        }
+
+        @keyframes fade-in-up {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+            animation: fade-in-up 0.8s ease-out forwards;
+            opacity: 0; /* Start hidden */
+        }
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+
         .cta-button { transition: all 0.3s ease; }
         .cta-button:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
     </style>
@@ -33,6 +52,7 @@
                  </svg>
                  <span class="text-xl font-bold text-[#0B2D48] font-poppins">F-Bridge Africa</span>
              </a>
+             
              <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
                 <a href="./index.html" class="text-gray-600 hover:text-[#1DB954]">Home</a>
                 <a href="./tech.html" class="text-gray-600 hover:text-[#1DB954]">Venture & Tech</a>
@@ -41,25 +61,42 @@
                 <a href="./capital.html" class="text-gray-600 hover:text-[#1DB954]">Capital</a>
                 <a href="https://calendly.com/ogirimaobey/30min" target="_blank" class="bg-[#1DB954] text-white font-bold py-2 px-6 rounded-full cta-button">Book a Call</a>
             </nav>
+
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <nav class="flex flex-col p-4 space-y-2">
+                <a href="./index.html" class="text-gray-600 hover:bg-gray-50 p-2 rounded-md">Home</a>
+                <a href="./tech.html" class="text-gray-600 hover:bg-gray-50 p-2 rounded-md">Venture & Tech</a>
+                <a href="./media.html" class="text-[#1DB954] font-bold p-2 rounded-md">Media & Marketing</a>
+                <a href="./operations.html" class="text-gray-600 hover:bg-gray-50 p-2 rounded-md">Operations</a>
+                <a href="./capital.html" class="text-gray-600 hover:bg-gray-50 p-2 rounded-md">Capital</a>
+                <a href="https://calendly.com/ogirimaobey/30min" target="_blank" class="bg-[#1DB954] text-white font-bold py-2 px-6 rounded-full cta-button text-center">Book a Call</a>
+            </nav>
         </div>
     </header>
 
-    <section class="hero-bg text-white py-20 md:py-24">
+    <section class="hero-bg-animated text-white py-20 md:py-24">
         <div class="container mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-6xl font-black leading-tight tracking-tight font-poppins">Build Your Product. Now Build Your Audience.</h1>
-            <p class="text-lg md:text-xl text-gray-300 mt-6 max-w-3xl mx-auto">We are a full-service media house and marketing agency. We build your brand, create your content, and manage the sales funnels that drive your growth.</p>
+            <h1 class="text-4xl md:text-6xl font-black leading-tight tracking-tight font-poppins animate-fade-in-up">Build Your Product. Now Build Your Audience.</h1>
+            <p class="text-lg md:text-xl text-gray-300 mt-6 max-w-3xl mx-auto animate-fade-in-up delay-1">We are a full-service media house and marketing agency. We build your brand, create your content, and manage the sales funnels that drive your growth.</p>
         </div>
     </section>
 
     <section class="py-20">
         <div class="container mx-auto px-6">
             <div class="text-center">
-                <h2 class="text-4xl md:text-5xl font-black text-[#0B2D48] mb-4 font-poppins">Media & Marketing Services</h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">From a logo to a fully managed marketing campaign, we are your creative partner.</p>
+                <h2 class="text-4xl md:text-5xl font-black text-[#0B2D48] mb-4 font-poppins animate-fade-in-up">Media & Marketing Services</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto animate-fade-in-up delay-1">From a logo to a fully managed marketing campaign, we are your creative partner.</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16 max-w-6xl mx-auto items-stretch">
-                <div class="bg-white p-8 rounded-2xl shadow-lg flex flex-col border-2 border-gray-200">
+                <div class="bg-white p-8 rounded-2xl shadow-lg flex flex-col border-2 border-gray-200 animate-fade-in-up delay-1">
                     <h3 class="text-3xl font-bold text-[#0B2D48] font-poppins">Brand Identity Package</h3>
                     <p class="mt-4 text-gray-600 flex-grow">For new businesses that need a professional brand identity that speaks excellence from day one.</p>
                     <div class="my-8">
@@ -75,7 +112,7 @@
                     <a href="https://calendly.com/ogirimaobey/30min" target="_blank" class="mt-auto w-full text-center bg-[#0B2D48] text-white font-bold py-3 px-6 rounded-full cta-button">Book a Consultation</a>
                 </div>
 
-                <div class="bg-white p-8 rounded-2xl shadow-2xl flex flex-col border-4 border-[#1DB954] relative">
+                <div class="bg-white p-8 rounded-2xl shadow-2xl flex flex-col border-4 border-[#1DB954] relative animate-fade-in-up delay-2">
                     <div class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-[#1DB954] text-white font-bold text-sm px-4 py-1 rounded-full">RECOMMENDED</div>
                     <h3 class="text-3xl font-bold text-[#0B2D48] font-poppins">Managed Social Media</h3>
                     <p class="mt-4 text-gray-600 flex-grow">Your outsourced creative team. We handle the content, you handle the growth.</p>
@@ -93,7 +130,7 @@
                     <a href="https://calendly.com/ogirimaobey/30min" target="_blank" class="mt-auto w-full text-center bg-[#1DB954] text-white font-bold py-3 px-6 rounded-full cta-button">Book a Consultation</a>
                 </div>
 
-                <div class="bg-white p-8 rounded-2xl shadow-lg flex flex-col border-2 border-gray-200">
+                <div class="bg-white p-8 rounded-2xl shadow-lg flex flex-col border-2 border-gray-200 animate-fade-in-up delay-3">
                     <h3 class="text-3xl font-bold text-[#0B2D48] font-poppins">The Growth Engine</h3>
                     <p class="mt-4 text-gray-600 flex-grow">For businesses that are ready to scale sales. We build and manage your lead generation system.</p>
                     <div class="my-8">
@@ -118,6 +155,17 @@
             <p class="text-gray-400 mt-2">Based in Lagos, Serving Africa</p>
         </div>
     </footer>
+
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            var menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        });
+    </script>
 
 </body>
 </html>
