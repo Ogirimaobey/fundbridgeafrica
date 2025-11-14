@@ -10,7 +10,6 @@
         body { font-family: 'Lato', sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
         h1, h2, h3, h4, h5, h6, .font-poppins { font-family: 'Poppins', sans-serif; }
         
-        /* NEW: Animated Gradient for "Tech Feel" */
         @keyframes gradient-flow {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -22,7 +21,6 @@
             animation: gradient-flow 15s ease infinite;
         }
 
-        /* NEW: Fade-in-on-load Animation */
         @keyframes fade-in-up {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -37,7 +35,6 @@
         .delay-4 { animation-delay: 0.8s; }
         .delay-5 { animation-delay: 1.0s; }
 
-
         .cta-button { transition: all 0.3s ease; }
         .cta-button:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
     </style>
@@ -50,7 +47,7 @@
 
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-             <a href="./index.html" class="flex items-center space-x-3">
+             <a href="./" class="flex items-center space-x-3">
                  <svg class="w-12 h-12" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                      <rect width="100" height="100" rx="20" fill="#0B2D48"/>
                      <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" font-family="Poppins, sans-serif" font-size="50" font-weight="bold" fill="white">
@@ -61,11 +58,12 @@
              </a>
              
              <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
-                <a href="./index.html" class="text-[#1DB954] font-bold">Home</a>
-                <a href="./tech.html" class="text-gray-600 hover:text-[#1DB954]">Venture & Tech</a>
-                <a href="./media.html" class="text-gray-600 hover:text-[#1DB954]">Media & Marketing</a>
-                <a href="./operations.html" class="text-gray-600 hover:text-[#1DB954]">Operations</a>
-                <a href="./capital.html" class="text-gray-600 hover:text-[#1DB954]">Capital</a>
+                <a href="./" class="text-[#1DB954] font-bold">Home</a>
+                <a href="./tech" class="text-gray-600 hover:text-[#1DB954]">Venture & Tech</a>
+                <a href="./media" class="text-gray-600 hover:text-[#1DB954]">Media & Marketing</a>
+                <a href="./operations" class="text-gray-600 hover:text-[#1DB954]">Operations</a>
+                <a href="./capital" class="text-gray-600 hover:text-[#1DB954]">Capital</a>
+                <a href="./accelerator" class="text-yellow-600 font-bold hover:text-[#1DB954]">Accelerator</a> 
                 <a href="https://calendly.com/ogirimaobey/30min" target="_blank" class="bg-[#1DB954] text-white font-bold py-2 px-6 rounded-full cta-button">Book a Call</a>
             </nav>
 
@@ -78,11 +76,12 @@
 
         <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
             <nav class="flex flex-col p-4 space-y-2">
-                <a href="./index.html" class="text-[#1DB954] font-bold p-2 rounded-md">Home</a>
-                <a href="./tech.html" class="text-gray-600 hover:bg-gray-50 p-2 rounded-md">Venture & Tech</a>
-                <a href="./media.html" class="text-gray-600 hover:bg-gray-50 p-2 rounded-md">Media & Marketing</a>
-                <a href="./operations.html" class="text-gray-600 hover:bg-gray-50 p-2 rounded-md">Operations</a>
-                <a href="./capital.html" class="text-gray-600 hover:bg-gray-50 p-2 rounded-md">Capital</a>
+                <a href="./" class="text-[#1DB954] font-bold p-2 rounded-md">Home</a>
+                <a href="./tech" class="text-gray-600 hover:bg-gray-50 p-2 rounded-md">Venture & Tech</a>
+                <a href="./media" class="text-gray-600 hover:bg-gray-50 p-2 rounded-md">Media & Marketing</a>
+                <a href="./operations" class="text-gray-600 hover:bg-gray-50 p-2 rounded-md">Operations</a>
+                <a href="./capital" class="text-gray-600 hover:bg-gray-50 p-2 rounded-md">Capital</a>
+                <a href="./accelerator" class="text-yellow-600 font-bold hover:bg-gray-50 p-2 rounded-md">Accelerator</a>
                 <a href="https://calendly.com/ogirimaobey/30min" target="_blank" class="bg-[#1DB954] text-white font-bold py-2 px-6 rounded-full cta-button text-center">Book a Call</a>
             </nav>
         </div>
@@ -122,25 +121,25 @@
                 <div class="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-green-500 animate-fade-in-up delay-2">
                     <h3 class="text-2xl font-bold text-[#0B2D48] font-poppins">Venture & Tech</h3>
                     <p class="mt-4 text-gray-700">We are a full-stack development agency. We build your MVP, website, mobile app, and AI/ML models from the ground up.</p>
-                    <a href="./tech.html" class="mt-6 inline-block text-green-600 font-bold hover:underline">Our Tech Services &rarr;</a>
+                    <a href="./tech" class="mt-6 inline-block text-green-600 font-bold hover:underline">Our Tech Services &rarr;</a>
                 </div>
                 
                 <div class="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-yellow-400 animate-fade-in-up delay-3">
                     <h3 class="text-2xl font-bold text-[#0B2D48] font-poppins">Media & Marketing</h3>
                     <p class="mt-4 text-gray-700">We are a media house. We build your brand, create your content, manage your socials, and run your sales funnels.</p>
-                    <a href="./media.html" class="mt-6 inline-block text-green-600 font-bold hover:underline">Our Media Services &rarr;</a>
+                    <a href="./media" class="mt-6 inline-block text-green-600 font-bold hover:underline">Our Media Services &rarr;</a>
                 </div>
                 
                 <div class="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-blue-500 animate-fade-in-up delay-4">
                     <h3 class="text-2xl font-bold text-[#0B2D48] font-poppins">Operations</h3>
                     <p class="mt-4 text-gray-700">We are your fractional executive. We provide "CTO" or "Head of Ops" services to manage your teams and build your systems.</p>
-                    <a href="./operations.html" class="mt-6 inline-block text-green-600 font-bold hover:underline">Our Ops Services &rarr;</a>
+                    <a href="./operations" class="mt-6 inline-block text-green-600 font-bold hover:underline">Our Ops Services &rarr;</a>
                 </div>
                 
                 <div class="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-purple-500 animate-fade-in-up delay-5">
                     <h3 class="text-2xl font-bold text-[#0B2D48] font-poppins">Capital</h3>
                     <p class="mt-4 text-gray-700">We are your strategic partner. Once your business is built, managed, and marketed, we bridge the gap to global capital.</p>
-                    <a href="./capital.html" class="mt-6 inline-block text-green-600 font-bold hover:underline">Our Capital Services &rarr;</a>
+                    <a href="./capital" class="mt-6 inline-block text-green-600 font-bold hover:underline">Our Capital Services &rarr;</a>
                 </div>
             </div>
         </div>
@@ -168,6 +167,17 @@
                         <span class="text-gray-600 block">Convener & Founder of DA-NMJ</span>
                     </cite>
                 </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="accelerator-cta" class="py-20 bg-green-50">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold text-green-800 font-poppins">A 100% FREE PROGRAM</h2>
+            <h3 class="text-4xl md:text-5xl font-black text-[#0B2D48] mt-2 font-poppins">Join The F-Bridge Accelerator</h3>
+            <p class="text-lg text-gray-700 max-w-3xl mx-auto mt-4">A 2-week intensive for serious founders. We will build your professional website, give you our "Idea to Empire" business course, and provide 1-on-1 mentorship. All for free.</p>
+            <div class="mt-8">
+                <a href="./accelerator" class="bg-green-600 text-white font-bold py-4 px-10 rounded-full cta-button text-lg">Learn More & Apply</a>
             </div>
         </div>
     </section>
