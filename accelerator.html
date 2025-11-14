@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The F-Bridge Accelerator - F-Bridge Africa</title>
+    <meta name="description" content="Join our free 2-week intensive accelerator. Get a free website, a business crash course, and 1-on-1 mentorship.">
+    
+    <style>
+        /* ... all your styles ... */
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+             <a href="/" class="flex items-center space-x-3">
+                 <svg class="w-12 h-12" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                     <rect width="100" height="100" rx="20" fill="#0B2D48"/>
+                     <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" font-family="Poppins, sans-serif" font-size="50" font-weight="bold" fill="white">
+                         FB
+                     </text>
+                 </svg>
+                 <span class="text-xl font-bold text-[#0B2D48] font-poppins">F-Bridge Africa</span>
+             </a>
+             
+             <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
+                <a href="/" class="text-gray-600 hover:text-[#1DB954]">Home</a>
+                <a href="/tech" class="text-gray-600 hover:text-[#1DB954]">Venture & Tech</a>
+                <a href="/media" class="text-gray-600 hover:text-[#1DB954]">Media & Marketing</a>
+                <a href="/operations" class="text-gray-600 hover:text-[#1DB954]">Operations</a>
+                <a href="/capital" class="text-gray-600 hover:text-[#1DB954]">Capital</a>
+                <a href="/accelerator" class="text-[#1DB954] font-bold">Accelerator</a> 
+                <a href="https://calendly.com/ogirimaobey/30min" target="_blank" class="bg-[#1DB954] text-white font-bold py-2 px-6 rounded-full cta-button">Book a Call</a>
+            </nav>
+
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <nav class="flex flex-col p-4 space-y-2">
+                <a href="/" class="text-gray-600 hover:bg-gray-50 p-2 rounded-md">Home</a>
+                <a href="/tech" class="text-gray-600 hover:bg-gray-50 p-2 rounded-md">Venture & Tech</a>
+                <a href="/media" class="text-gray-600 hover:bg-gray-50 p-2 rounded-md">Media & Marketing</a>
+                <a href="/operations" class="text-gray-600 hover:bg-gray-50 p-2 rounded-md">Operations</a>
+                <a href="/capital" class="text-gray-600 hover:bg-gray-50 p-2 rounded-md">Capital</a>
+                <a href="/accelerator" class="text-[#1DB954] font-bold p-2 rounded-md">Accelerator</a>
+                <a href="https://calendly.com/ogirimaobey/30min" target="_blank" class="bg-[#1DB954] text-white font-bold py-2 px-6 rounded-full cta-button text-center">Book a Call</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-bg-animated text-white py-24 md:py-32">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl md:text-7xl font-black leading-tight tracking-tight font-poppins animate-fade-in-up">The F-Bridge Accelerator</h1>
+            <p class="text-lg md:text-xl text-gray-300 mt-6 max-w-3xl mx-auto animate-fade-in-up delay-1">A **100% Free 2-Week Intensive Program** for serious founders. We will build your website, give you our full business course, and provide 1-on-1 mentorship. No cost, no catch.</p>
+            <a href="/apply" class="mt-10 inline-block bg-[#FFD700] text-[#0B2D48] font-bold py-4 px-10 rounded-full cta-button text-lg animate-fade-in-up delay-2">Apply for the Next Cohort</a>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        </section>
+
+    <section class="bg-[#0B2D48] text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-4 font-poppins">Ready to Build Your Business?</h2>
+            <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">This 2-week intensive is completely free, but spots are limited. We run new cohorts every 2 weeks for the next 3 months. Apply now.</p>
+            <a href="/apply" class="bg-[#FFD700] text-[#0B2D48] font-bold py-4 px-10 rounded-full cta-button text-lg">Apply for Free</a>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            var menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
