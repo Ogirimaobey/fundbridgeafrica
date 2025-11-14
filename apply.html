@@ -39,7 +39,7 @@
             
             <div class="text-center mb-8">
                 <h1 class="text-3xl md:text-4xl font-black text-[#0B2D48] font-poppins">Accelerator Application</h1>
-                <p class="text-lg text-gray-600 mt-2">Apply for our **free 2-week intensive program**. Spots are limited, so we review every application carefully.</p>
+                <p class="text-lg text-gray-600 mt-2">Apply for our free 2-week intensive. <strong class="text-gray-900">Spots are limited and selection is competitive.</strong> We review every application carefully.</p>
             </div>
             
             <form id="sprint-form" class="space-y-6">
@@ -99,8 +99,7 @@
                 status.classList.add("bg-green-100", "text-green-800");
                 status.innerHTML = "Success! Submitting your application...";
                 
-                // This is the redirect. It waits 1 second then sends
-                // the user to your thank-you page.
+                // This is the redirect.
                 setTimeout(function() {
                     window.location.href = "/thank-you";
                 }, 1000);
